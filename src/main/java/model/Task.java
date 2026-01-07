@@ -6,13 +6,13 @@ public class Task {
     private String createdDate;
     private String status;
 
-
+    // Getters
     public int getId() { return id; }
     public String getName() { return name; }
     public String getCreatedDate() { return createdDate; }
     public String getStatus() { return status; }
 
-  
+    // Setters
     public void setId(int id) { this.id = id; }
     public void setName(String name) { this.name = name; }
     public void setCreatedDate(String createdDate) { this.createdDate = createdDate; }
