@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -51,6 +52,20 @@ public class TaskDAO {
             System.out.println("Task status updated successfully!");
         } catch (SQLException e) {
             System.out.println("Error updating task status: " + e.getMessage());
+        }
+    }
+
+    public void listTasks() {
+        // Code to list all tasks from the database
+        String sql = "SELECT * FROM tasks";
+        try (Connection conn = DriverManager.getConnection(url);
+        PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                System.out.println("ID: " + rs.getString("id") + ", Name: " + rs.getString("name") + ", Created Date: " + rs.getString("createdDate") + ", Status: " + rs.getString("status"));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error listing tasks: " + e.getMessage());
         }
     }
 }

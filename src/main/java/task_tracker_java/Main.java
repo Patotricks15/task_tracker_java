@@ -32,6 +32,7 @@ public class Main {
                 case "list":
                 // Vamos precisar criar esse método no Service e DAO ainda!
                 System.out.println("Listando tarefas...");
+                service.listTasks();
                 break;
 
             case "mark-in-progress":

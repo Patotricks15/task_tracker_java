@@ -33,4 +33,8 @@ public class TaskService {
         }
         taskDAO.updateTaskStatus(taskId, status);
     }
+
+    public void listTasks() {
+        taskDAO.listTasks();
+    }
 }
