@@ -17,16 +17,16 @@ public class TaskService {
     }
 
   
-    public void deleteTask(int taskId) {
-        if (taskId <= 0) {
-            System.out.println("Erro: ID de tarefa inválido!");
+    public void deleteTask(String taskId) {
+        if (taskId == null || taskId.trim().isEmpty()) {
+            System.err.println("Erro: O ID da tarefa é obrigatório!");
             return;
         }
         taskDAO.deleteTask(taskId);
     }
 
 
-    public void updateTaskStatus(int taskId, String status) {
+    public void updateTaskStatus(String taskId, String status) {
         if (status == null || status.trim().isEmpty()) {
             System.out.println("Erro: O novo status não pode ser vazio!");
             return;

@@ -11,7 +11,6 @@ public class Main {
         Task t = new Task();
         t.setName("Aprender arquitetura Python");
         t.setStatus("todo");
-        // O Service valida e o DAO salva no SQLite
         service.addTask(t);
     }
 }
