@@ -1,0 +1,6 @@
+#!/bin/bash
+
+BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+java -cp "$BASE_DIR/src/main/java:$BASE_DIR/lib/sqlite-jdbc.jar:$BASE_DIR/lib/slf4j-api.jar" \
+task_tracker_java.Main "$@"

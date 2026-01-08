@@ -9,7 +9,8 @@ import java.time.LocalDate;
 import model.Task;
 
 public class TaskDAO {
-    private String url = "jdbc:sqlite:tasks.db";
+    private String url = "jdbc:sqlite:/home/patrick/task_tracker_java/tasks.db";
+    
     public void addTask(Task task) {
         // Code to add task to the database
         String sql = "INSERT INTO tasks(id, name, createdDate, status) VALUES(?,?,?,?)";
