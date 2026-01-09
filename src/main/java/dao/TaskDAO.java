@@ -41,13 +41,13 @@ public class TaskDAO {
         }
     }
 
-    public void updateTaskStatus(String taskId, String status) {
+    public void updateTaskStatus(String name, String status) {
         // Code to update task status in the database
-        String sql = "UPDATE tasks SET status = ? WHERE id = ?";
+        String sql = "UPDATE tasks SET status = ? WHERE name = ?";
         try (Connection conn = DriverManager.getConnection(url);
         PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, status);
-            pstmt.setString(2, taskId);
+            pstmt.setString(2, name);
             pstmt.executeUpdate();
             System.out.println("Task status updated successfully!");
         } catch (SQLException e) {
